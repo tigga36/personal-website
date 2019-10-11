@@ -1,0 +1,29 @@
+@import "mixin";
+
+$cyan: #47d1d1;
+$cyan2: #ccffee;
+
+.nav-bar{
+  background-color: $cyan;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  padding: 10px 40px;
+  >h1{
+    @include b_box;
+    font-weight: normal;
+    color: white;
+  }
+}
+
+.main-card{
+	@include wrap;
+	@include b_box;
+	box-shadow: 20px 20px 5px $cyan2;
+	color: white;
+	background-color: $cyan;
+	padding: 20px;
+	h2{
+
+	}
+}
