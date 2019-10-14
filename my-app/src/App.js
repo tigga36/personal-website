@@ -1,14 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
+import { Route, Switch } from 'react-router-dom'
 import './App.css';
+import HomePage from './pages/HomePage'
+import AboutMe from './pages/AboutMe'
+// import UserPage from './pages/UserPage'
 
 function App() {
+  // return (
+  //   <div>
+  //     <NavBar />
+  //     <Route exact path="/" component={HomePage} />
+  //     <AboutCard />
+  //     <ContactCard />
+  //   </div>
+  // );
   return (
-    <div>
-      <NavBar />
-      <AboutCard />
-      <ContactCard />
-    </div>
+    <Switch>
+      <Route exact path="/" component={HomePage} />
+      <Route path="/:id" component={AboutMe} />
+    </Switch>
   );
 }
 
