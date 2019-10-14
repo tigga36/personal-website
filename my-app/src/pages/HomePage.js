@@ -1,11 +1,10 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
-import NavBar from '../App'
+import NavBar from './NavBar'
 
 export default function HomePage() {
   return (
     <div className="container">
-      
+      <NavBar />
       <h1>Home Page</h1>
     </div>
   )
