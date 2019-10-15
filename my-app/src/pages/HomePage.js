@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import NavBar from './NavBar'
+import Footer from './Footer'
 
 export default function HomePage() {
   return (
@@ -21,6 +22,14 @@ export default function HomePage() {
             </div>
           </div>
         </section>
+        <section className="">
+          <div className="box">
+            <div className="post">
+              <h2>Projects</h2>
+            </div>
+          </div>
+        </section>
+        <Footer />
       </div>
   )
 }
