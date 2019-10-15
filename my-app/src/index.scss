@@ -3,6 +3,15 @@
 $cyan: #47d1d1;
 $cyan2: #ccffee;
 
+section{
+  padding: 80px 0;
+}
+
+.bg{
+  background-color: $cyan2;
+  color: white;
+}
+
 .nav-bar{
   background-color: $cyan;
   display: flex;
@@ -13,6 +22,35 @@ $cyan2: #ccffee;
     @include b_box;
     font-weight: normal;
     color: white;
+  }
+  &-btns{
+    @include fb;
+    @include justify(space-around);
+    @include align(center);
+    width: 20%;
+  }
+  &-btn{
+    @include remb(24px);
+    color: white;
+    text-decoration: none;
+  }
+}
+
+.box{
+  @include wrap();
+  >h2{
+    @include remb(42px);
+  }
+}
+
+.post{
+  h2{
+    @include remb(42px);
+    color: $cyan;
+  }
+  p{
+    @include rem(18px);
+    margin-bottom: 20px;
   }
 }
 

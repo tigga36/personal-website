@@ -1,3 +1,68 @@
+@mixin fb{
+  display:-webkit-box;//Android
+  display:-ms-flexbox;//IE10
+  @each $prefix in -webkit-, '' {
+    display : #{$prefix}#{flex};
+  }
+}
+@mixin direction($content:row-reverse){
+  @if $content == row{
+    -webkit-box-orient: horizontal; //Android
+  }
+  @else if $content == column{
+    -webkit-box-orient: vertical; //Android  
+  }
+  @each $prefix in -webkit-, -ms-, '' {
+    #{$prefix}#{flex-direction} : $content;
+  }
+}
+@mixin f_wrap($content:wrap){
+  @each $prefix in -ms-, -webkit-, '' {
+    #{$prefix}#{flex-wrap} : $content;
+  }
+}
+@mixin justify($content:space-between){
+  @if $content == flex-start{
+    -webkit-box-pack: start; //Android
+    -ms-flex-pack: start; //IE10    
+  }
+  @else if $content == flex-end{
+    -webkit-box-pack: end; //Android
+    -ms-flex-pack: end; //IE10    
+  }
+  @else if $content == space-between{
+    -webkit-box-pack: justify; //Android
+    -ms-flex-pack: justify; //IE10    
+  }
+  @else if $content == space-around{
+    -ms-flex-pack: distribute; //IE10    
+  }
+  @else{
+    -webkit-box-pack: $content; //Android
+    -ms-flex-pack: $content; //IE10
+  }
+  @each $prefix in -webkit-, '' {
+    #{$prefix}#{justify-content} : $content;
+  }
+}
+@mixin align($content:center){
+  @if $content == flex-start {
+    -webkit-box-align: start; //Android
+    -ms-flex-align: start; //IE10
+  }
+  @else if $content == flex-end {
+    -webkit-box-align: end; //Android
+    -ms-flex-align: end; //IE10
+  }
+  @else{
+    -webkit-box-align: $content; //Android
+    -ms-flex-align: $content; //IE10
+  }
+  @each $prefix in -webkit-, '' {
+    #{$prefix}#{align-items} : $content;
+  }
+}
+
 @mixin b_box(){
   box-sizing: border-box;
 }
@@ -7,4 +72,13 @@
 	max-width: 100%;
 	margin-left:auto;
 	margin-right: auto; 
+}
+
+@mixin rem($size){
+	font-size: $size;
+}
+
+@mixin remb($size){
+	font-weight: bold;
+	font-size: $size;
 }
