@@ -6,9 +6,9 @@ export default class NavBar extends React.Component {
     return (
       <div className="nav-bar">
         <h1>WEBSITE</h1>
-        <div>
-          <Link to="/AboutMe">AboutMe</Link>
-          <Link to="/Contact">Contact</Link>
+        <div className="nav-bar-btns">
+          <Link to="/AboutMe" className="nav-bar-btn">AboutMe</Link>
+          <Link to="/Contact" className="nav-bar-btn">Contact</Link>
         </div>
       </div>
     );
